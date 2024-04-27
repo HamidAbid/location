@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<body onload="getLocation()">
+    <style>
+        *{
+            background: #000;
+            color: aliceblue;
+           
+        }
+    </style>
+<div class="container-fluid p-5">
+    <h1 id="demo" class="fs-1 p-5 m-5"></h1>
+</div>
+    <script>
+        const x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } 
+        }
+        function showPosition(position) {
+            x.innerHTML = position.coords.latitude +
+        "," + position.coords.longitude;
+        }
+    </script>
+
+</body>
+
+</html>
